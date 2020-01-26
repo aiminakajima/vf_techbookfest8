@@ -116,7 +116,7 @@ Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキ
 //sideimage[aiminakajima-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
 第6章 担当 @<strong>{中嶋あいみ}@<br>{}
-アメリカでAmazon Echoと出会ってからVUIの世界に魅せられ、公私ともにVUIデザイナーとして活動。2020年2月に起業し、株式会社VOICE ALEを設立。VUI/UXでスマホ依存をなくし、世の中を平和にするミッションを追求しています。@<br>{}
+アメリカでAmazon Echoと出会ってからVUIの世界に魅せられ、公私ともにVUIデザイナーとして活動。2020年2月に起業し、株式会社VOICE ALEを設立。VUI/UXでスマホ依存をなくし、世の中を平和にするミッションを追求しています。
 Women in Voice Japan ambassador
 //}
 //blankline
