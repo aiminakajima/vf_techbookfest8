@@ -23,7 +23,7 @@ xxx
 //blankline
 
 【企業向け】
-//sideimage[review-starter/images/chap99-postscript/Workshop-Voiceflow.jpeg]{
+//sideimage[Workshop-Voiceflow][48mm][side=L,sep=7mm,border=on]{
 //noindent
 株式会社ISAO主催「AI音声アシスタント/スマートスピーカービジネス活用セミナー&VUI体験ワークショップ」 にて、Voiceflowを使ったスキル制作体験を行いました。たった1時半ほどのグループワークで、スキルの企画から始まり、ハッピーパス作り、スキル制作、実機でのテストまで「VUIデザインスプリント」をクイックに体験いただきました。
 //}
@@ -86,39 +86,38 @@ https://www.facebook.com/groups/voiceflowgroup/
 //}
 //blankline
 
-//sideimage[aiminakajima-icon][24mm][side=L,sep=7mm,border=on]{
+//sideimage[magistralla-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
-第2章 担当 @<strong>{中嶋あいみ}@<br>{}
-アメリカでAmazon Echoと出会ってからVUIの世界に魅せられ、公私ともにVUIデザイナーとして活動。2020年2月に起業し、株式会社VOICE ALEを設立。VUI/UXでスマホ依存をなくし、世の中を平和にするミッションを追求しています。
-Women in Voice Japan ambassador
-//}
-//blankline
-
-//sideimage[fukumura-kaigo-icon][24mm][side=L,sep=7mm,border=on]{
-//noindent
-第3章 担当 @<strong>{福村浩治}@<br>{}
-//}
-//blankline
-
-//sideimage[gaomar-icon][24mm][side=L,sep=7mm,border=on]{
-//noindent
-第4章 担当 @<strong>{がおまる}@<br>{}
-スマートスピーカーが好きすぎて、本まで執筆しちゃいました！色々連携したがる変なおじさん。「業界荒らし」や「がおってる！」と言われている。@<br>{}
-Alexa Champion（'20〜）/ LINE API Expert（'19〜）
+第2章 担当 @<strong>{渡辺泰久}@<br>{}
+福岡でVUIコミュニティ「VUI Fukuoka」をお手伝いしています、Voiceflow歴半年です。
 //}
 //blankline
 
 //sideimage[kun432-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
-第5章 担当 @<strong>{kun432}@<br>{}
+第3章 担当 @<strong>{kun432}@<br>{}
 普段の仕事では一切VUIに関わっていないインフラエンジニア。関西のVUIイベントによく出没してます。Voiceflowの「西の人」と言われてます。@<br>{}
 Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキルビルダー
 //}
 //blankline
 
-//sideimage[magistralla-icon][24mm][side=L,sep=7mm,border=on]{
+//sideimage[sitopp-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
-第6章 担当 @<strong>{渡辺泰久}@<br>{}
+第4章 担当 @<strong>{伊藤清香}@<br>{}
+//}
+//blankline
+
+//sideimage[vui-rie-icon][24mm][side=L,sep=7mm,border=on]{
+//noindent
+第5章 担当 @<strong>{元木理恵}@<br>{}
+//}
+//blankline
+
+//sideimage[aiminakajima-icon][24mm][side=L,sep=7mm,border=on]{
+//noindent
+第6章 担当 @<strong>{中嶋あいみ}@<br>{}
+アメリカでAmazon Echoと出会ってからVUIの世界に魅せられ、公私ともにVUIデザイナーとして活動。2020年2月に起業し、株式会社VOICE ALEを設立。VUI/UXでスマホ依存をなくし、世の中を平和にするミッションを追求しています。
+Women in Voice Japan ambassador
 //}
 //blankline
 
@@ -126,14 +125,18 @@ Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキ
 \clearpage
 //}
 
-//sideimage[sitopp-icon][24mm][side=L,sep=7mm,border=on]{
+//sideimage[fukumura-kaigo-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
-第7章 担当 @<strong>{伊藤清香}@<br>{}
+第7章 担当 @<strong>{福村浩治}@<br>{}
+福岡でVUIコミュニティ「VUI Fukuoka」を主催している、介護エンジニア。介護、障害福祉への活用目的で、VUIに注目しています。@<br>{}
+Alexaスキルアワード2018子育て支援賞受賞。
 //}
 //blankline
 
-//sideimage[vui-rie-icon][24mm][side=L,sep=7mm,border=on]{
+//sideimage[gaomar-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
-第8章 担当 @<strong>{元木理恵}@<br>{}
+第8章 担当 @<strong>{がおまる}@<br>{}
+スマートスピーカーが好きすぎて、本まで執筆しちゃいました！色々連携したがる変なおじさん。「業界荒らし」や「がおってる！」と言われている。@<br>{}
+Alexa Champion（'20〜）/ LINE API Expert（'19〜）
 //}
 //blankline
