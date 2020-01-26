@@ -285,7 +285,6 @@ Adafruitの説明ページにアクセスして調べます。
 
 ```https://io.adafruit.com/api/docs/mqtt.html#mqtt-connection-details```
 
-
 ```
 Host	io.adafruit.com
 Secure (SSL) Port	8883
