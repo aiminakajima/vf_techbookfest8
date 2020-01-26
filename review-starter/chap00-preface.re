@@ -142,4 +142,4 @@ Voiceflowが成長するにつれて、コミュニティの製品と役割も�
 プラットフォームを毎日サポートしてくれる何千人ものVoiceflowユーザー、お客様、そしてチームメイトの努力なしにはこれは不可能です。音声プラットフォームだけでなく、あらゆるプラットフォームで、誰でも会話型インターフェースを作成できるプラットフォームを一緒に構築しましょう。 すべての初期ユーザー、お客様、パートナー、サポーターに感謝します。 一緒に成し遂げることがたくさんあります。
 //}
 
-//numberlessimage[chap00-preface/voiceflow_08][Voiceflow team, December 2019][scale=0.95]
+//numberlessimage[chap00-preface/voiceflow_08][Voiceflow team, December 2019][scale=0.9]
