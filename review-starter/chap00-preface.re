@@ -23,7 +23,7 @@
 === Voiceflowチームより寄稿
 Before we started Voiceflow, we were Alexa Skill creators working on an Alexa skill called Fable. The premise was a series of interactive children's stories with real voice actors, and a "choose your own adventure" format that would give the reader the ability to use their voice and control the narrative. At that time, we had all left school to work on the concept together. We felt voice technology was going to change the world and couldn't wait to be a part of the revolution. Working on Fable, we would stay up for days straight writing interactive children stories that would be played on Alexa. Every week we would write a new story, create the audio, print physical storybooks for the families to read alongside Alexa, then box-up the stories and devices and deliver them on our bikes every Friday afternoon.  
 
-@<icon>{/chap00-preface/voiceflow_01.jpg}
+@<icon>{chap00-preface/voiceflow_01}
 
 Fable became a popular Alexa skill in Canada. However, Alexa often misheard the families and heard "Bible" instead of "Fable". So, we changed the name of the skill to "Storyflow" which was named after our role model of a company, Webflow. We worked incredibly hard for 5 months, without any pay, to build an amazing stories platform on Alexa. Below is a flowchart we made for one of our interactive stories that would later serve as the inspiration for Voiceflow's flowchart design system.  
 
