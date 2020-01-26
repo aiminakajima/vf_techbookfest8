@@ -59,7 +59,7 @@ M5StickCと赤外線送受信ユニットの値段は、スイッチサイエン
 
 Arduino IDEをインストールします。すでに使っている人はスキップしてください。
 
-* chromeでArduinoのWebページ (```https://www.arduino.cc/```)を開く。
+* chromeでArduinoのWebページ (https://www.arduino.cc/)を開く。
 * 「SOFTWARE」→「DOWNLOAD」をクリック。
 * 「Download the Arduino IDE」の段落にある「```Mac OS X 10.8 Mountain Lion or newer```」をクリック。
 * 「Contribute to the Arduino Software」というページが開いたら「JUST DOWNLOAD」をクリック@<fn>{sitopp_donate}。
@@ -70,7 +70,7 @@ Arduino IDEをインストールします。すでに使っている人はスキ
 //footnote[sitopp_donate][彼らの活動を支援したい方は是非寄付を（＾o＾）]
 
 
-### Arduino IDEにM5StickCの開発に必要な一式を取り込む
+### Arduino IDEにM5StickCのxxxを取り込む
 
 * Arduino IDEを起動します。
 * 「sketch_〜」というエディタが開きますが、今は使いません。
@@ -217,14 +217,15 @@ void setup() {
 * スケッチエディタ上で、赤外線のパターンを書き換えます。
 
 例）
+Daikinの場合、「uint8_t daikin_code[35]={}」の中身を、先ほど採取した赤外線のパターンの「uint8_t state[35] ={}」の中身で上書きをします。35は配列の要素数ですので、数が違う場合は合わせて変更してください。
 
-Daikinの場合、「```uint8_t daikin_code[35]={}```」の中身を、先ほど採取した赤外線のパターンの「```uint8_t state[35] ={}```」の中身で上書きをします。なお「35」は配列の要素数ですので、数が違う場合は合わせて変更してください。
-
-このサンプルコードでは、見やすいよう改行を入れていますが、改行は入れなくても動きます。
 
 ![コピー元](images/chapxx-sitopp/sito_024.png)
 
 ![コピー先](images/chapxx-sitopp/sito_025.png)
+このサンプルコードでは、見やすいよう改行を入れています。
+
+例）Daikin以外のメーカーの場合、「uint8_t daikin_code[35]={}」は使わず、「irsend.sendDaikin（daikin_code）;」でも送信できません。「Daikin以外のメーカーの場合」を参照ください。
 
 
 
@@ -232,8 +233,7 @@ Daikinの場合、「```uint8_t daikin_code[35]={}```」の中身を、先ほど
 * ファイルの保存場所を聞かれるので、適当に指定します。
 * 書き込みにかかる時間、数十秒を待ちます。
 * スケッチエディタの下半分にインストールログがどどっと出力され、「Hard resetting via RTS pin...」メッセージが出たらインストール完了です。
-* MacとM5StickCをつなぐUSBケーブルを抜きます。赤外線送受信ユニットは抜かずにさしたままです。
-* M5StickCをエアコンの50cm以内に持っていきます。M5ボタンを押すと、エアコンがつきました。
+* USBケーブルを抜いて、M5StickCをエアコンの50cn以内に持っていきます。赤外線送受信ユニットは抜かずにさしたままです。M5ボタンを押すと、エアコンがつきました。
 
 ![M5StickCでエアコンを操作しているところ](images/chapxx-sitopp/sito_023.png)
 
@@ -247,24 +247,24 @@ Daikinの場合、「```uint8_t daikin_code[35]={}```」の中身を、先ほど
 
 ありがたいことに、IRremoteESP8266ライブラリの作者のGitHubにサンプルコードがあります。
 
-```https://GitHub.com/crankyoldgit/IRremoteESP8266```
+https://GitHub.com/crankyoldgit/IRremoteESP8266
 
 しかし、これだけでは良くわからないので、
 とても参考になる有益な**神ブログ**をいくつか紹介します。
 
 * M5StickCでスマートフォンから操作できる家電リモコンを作る（NECの例）
 
-```https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/```
+https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/
 
 * M5StickC を赤外線リモコンにする（各種テレビメーカーの例）
 
-```https://kuratsuki.net/2019/07/```
+https://kuratsuki.net/2019/07/
 
 
 
 ## AdafruitのMQTTブローカの設定
 
-* Adafruit（エイダフルート）```https://io.adafruit.com/``` にアクセスし、アカウントを作成します。
+* Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成します。
 * 「Actions」 → 「Create a New Dashboard」で、ダッシュボードを作成します。
 * * Name：voiceflowIRDev
 * * Description：開発用
@@ -281,9 +281,7 @@ Daikinの場合、「```uint8_t daikin_code[35]={}```」の中身を、先ほど
 
 * MQTTブローカのサーバ情報を調べておきます。
 
-Adafruitの説明ページにアクセスして調べます。
-
-```https://io.adafruit.com/api/docs/mqtt.html#mqtt-connection-details```
+https://io.adafruit.com/api/docs/mqtt.html#mqtt-connection-details
 
 ```
 Host	io.adafruit.com
@@ -325,7 +323,7 @@ Webhooksで発行されたURLにアクセスすると、AdafruitのMQTTブロー
 
 #### WebhooksのURLを調べる
 
-* ChromeでIFTTTの「My Services」にアクセス ```https://ifttt.com/my_services``` 
+* ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
 * 「Webhooks」 → 「Documentation」
 * 「Make a POST or GET Web request to」の下にあるURLの{event}の所に「M5StickCIRRemoCon」と入力する。```https://```から始まるURLをコピーしてメモ帳などに控えておく。
 * 「With an optional JSON body of:」の下にあるJsonをコピーして、メモ帳などに控えておく。
@@ -342,7 +340,7 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 
 ### 暖房をつけるフローの作成
 
-* Chromeでvoiceflowにアクセスし、ログイン。```https://www.voiceflow.com/```
+* Chromeでvoiceflowにアクセスし、ログインします。https://www.voiceflow.com/
 * create Project」クリック → 「Enter your Project name」に、Actions名を入力する。
 
 例）Actions名を「しょういんじ」にした場合、Google Homeに「OK Google しょういんじを呼んで」と話しかければ起動できます。
@@ -492,8 +490,8 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 
 Voiceflow公式ガイダンス@<br>{}
 
-```https://learn.voiceflow.com/en/articles/``` @<br>{}
-```2705386-uploading-your-project-to-google-assistant```
+https://learn.voiceflow.com/en/articles/ @<br>{}
+2705386-uploading-your-project-to-google-assistant
 
 
 ![](images/chapxx-sitopp/sito_032.png)
@@ -550,7 +548,7 @@ Google Assistant voice：Male 1
 
 もしエラーが出たら、以下を試してみてください。
 
-* DialogFlowのコンソールを開く ```https://dialogflow.cloud.google.com/```
+* DialogFlowのコンソールを開く https://dialogflow.cloud.google.com/
 * 左上の三本線のメニューアイコンをクリックして、先ほど作ったプロジェクトを選び、歯車をクリックします。
 * 「General Language MLSettings〜」とタブが並んでいるので「Languages」をクリック
 * 「Select Additional Language」をクリックし、「Japanese - ja」を選択
@@ -587,7 +585,7 @@ Speaking as Alexa
 
 ## M5StickCリモコンをMQTT対応にする
 
-AdafruitのMQTTライブラリを使います。また、Adafruit のMQTT Library をインストールするとついてくるMQTTのサンプルコード「```mqtt_2subs_esp8266```」をアレンジして使いました。
+AdafruitのMQTTライブラリを使います。また、Adafruit のMQTT Library をインストールするとついてくるMQTTのサンプルコード「mqtt_2subs_esp8266」をアレンジして使いました。
 
 * Arduino IDEを開き、「スケッチ」→「ライブラリをインクルード」→「ライブラリを管理」→ 検索をフィルタ欄に「Adafruit_mqtt」と検索し、表示されたものをインストール。
 * 「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
@@ -634,10 +632,10 @@ URL：https://GitHub.com/sitopp/vf_techbookfest8_sampleCode
 
 IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみましょう。
 
-* ChromeでIFTTTの「My Services」```https://ifttt.com/my_services``` にアクセス
+* ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
 * 「Webhooks」 → 「Documentation」
-* 「```Make a POST or GET Web request to:```」の下にあるURLの```{event}```のところに「```M5StickCIRRemoCon```」と入力
-* 「```With an optional JSON body of:```」に以下のように入力
+* 「Make a POST or GET Web request to:」の下にあるURLの{event}のところに「M5StickCIRRemoCon」と入力
+* 「With an optional JSON body of:」に以下のように入力
 
 ```
 { "value1" : "aircon", "value2" : "on", "value3" : "t7d=ClVt" }
@@ -650,7 +648,7 @@ IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみ
 19:26:32.568 -> onを通過
 ```
 
-* OFFの方も確認しましょう。「```With an optional JSON body of:```」の「```"value2" : "on"```」を「 ```"value2" : "off"```」に変更
+* OFFの方も確認しましょう。「With an optional JSON body of:」の「"value2" : **"on"**」を「 "value2" : **"off"**」に変更
 * 「Test It」をクリック
 * シリアルモニタに、以下のメッセージが表示されることを確認。
 
@@ -671,7 +669,7 @@ IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみ
 
 まず、Actions On Googleのコンソールから実行してみましょう。
 
-* Chromeで ```https://console.actions.google.com/``` にアクセス
+* Chromeで https://console.actions.google.com/ にアクセス
 * 「Test」→ 左下の入力欄に「しょういんじにつないで」と表示されているので、クリックしてからエンター押下
 * 「わかりました。しょういんじのテストバージョンです。」と応答があったら、「暖房つけて」と記入してエンター押下
 * 「暖房をつけます。送信しました。」と男性の声で読み上げたあと、1秒後にエアコンがつく。
@@ -728,7 +726,7 @@ VUIを通じて新しいユーザー体験が生み出され、不可逆な進�
 
 @sitopp
 
-```https://qiita.com/sitopp```
+https://qiita.com/sitopp
 
 
 
