@@ -23,7 +23,7 @@ xxx
 //blankline
 
 【企業向け】
-//sideimage[tw-icon][48mm][side=L,sep=7mm,border=on]{
+//sideimage[review-starter/images/chap99-postscript/Workshop-Voiceflow.jpeg]{
 //noindent
 株式会社ISAO主催「AI音声アシスタント/スマートスピーカービジネス活用セミナー&VUI体験ワークショップ」 にて、Voiceflowを使ったスキル制作体験を行いました。たった1時半ほどのグループワークで、スキルの企画から始まり、ハッピーパス作り、スキル制作、実機でのテストまで「VUIデザインスプリント」をクイックに体験いただきました。
 //}
