@@ -217,7 +217,6 @@ void setup() {
 * スケッチエディタ上で、赤外線のパターンを書き換えます。
 
 例）
-
 Daikinの場合、「```uint8_t daikin_code[35]={}```」の中身を、先ほど採取した赤外線のパターンの「```uint8_t state[35] ={}```」の中身で上書きをします。35は配列の要素数ですので、数が違う場合は合わせて変更してください。
 
 
@@ -247,14 +246,14 @@ Daikinの場合、「```uint8_t daikin_code[35]={}```」の中身を、先ほど
 
 ありがたいことに、IRremoteESP8266ライブラリの作者のGitHubにサンプルコードがあります。
 
-```https://GitHub.com/crankyoldgit/IRremoteESP8266```
+https://GitHub.com/crankyoldgit/IRremoteESP8266
 
 しかし、これだけでは良くわからないので、
 とても参考になる有益な**神ブログ**をいくつか紹介します。
 
 * M5StickCでスマートフォンから操作できる家電リモコンを作る（NECの例）
 
-```https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/```
+https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/
 
 * M5StickC を赤外線リモコンにする（各種テレビメーカーの例）
 
@@ -266,21 +265,15 @@ https://kuratsuki.net/2019/07/
 
 * Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成します。
 * 「Actions」 → 「Create a New Dashboard」で、ダッシュボードを作成します。
+* * Name：voiceflowIRDev
+* * Description：開発用
 
-```
-Name：voiceflowIRDev
-Description：開発用
-```
+* 「Feeds」 → 「View All」 → 「Actions」 → 「Create a new feed」でFeedsを作成します。
+* * Name：daikin_onoff
+* * Description: Daikin 赤外線リモコン なりすまし用
 
-* 次に「Feeds」 → 「View All」 → 「Actions」 → 「Create a new feed」でFeedsを作成します。
-
-```
-Name：daikin_onoff
-Description: Daikin 赤外線リモコン なりすまし用
-```
-
-* 「Feeds」 → 「View All」→ 「daikin_onoff」 → 「Feed Info」を開きます。
-* 「MQTT by Key」のところにMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
+* 「Feeds」 → 「View All」→ 「daikin_onoff」 → 「Feed Info」
+* * 「MQTT by Key」のところにMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
 
 ![](images/chapxx-sitopp/sito_027.png)
 
