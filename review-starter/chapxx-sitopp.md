@@ -110,16 +110,16 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 * M5StickCに```赤外線送受信ユニット```をしっかりさします。
 * M5StickCをUSB Type-CケーブルでMacに接続します。
 * 「ツール」→「ボード」→「M5StickC」を選択します。
-* 「ツール」→「シリアルポート」→表示された複数の選択肢の中から、「```/dev/cu.usbserial-```」の文字が入っているものを選択します。
+* 「ツール」→「シリアルポート」→表示された複数の選択肢の中から、「/dev/cu.usbserial-」の文字が入っているものを選択します。
 
 ![正常にシリアルポート接続した後の「ツール」メニュー](images/chapxx-sitopp/sito_009.png)
 
 
 * Arduino IDEの「ツール」→「ライブラリを管理」→「IRremoteESP8266」と入力し、表示されたライブラリをインストールします。
 * 「ファイル」→「スケッチ例」→「IRremoteESP8266」→「IRrecvDumpV2」を開きます。
-* 「ファイル」→「新規ファイル」でスケッチエディタを開きます。自動的に「```sketch_日付```」という名前が生成されます。
-* 「```sketch_日付```」スケッチエディタに下敷き表示されたコードを全文削除してください。
-* 「IRrecvDumpV2」のコードを全文コピーして「```sketch_日付```」に貼り付け、以下の一行だけ書き換えます。
+* 「ファイル」→「新規ファイル」でスケッチエディタを開きます。自動的に「sketch_日付」という名前が生成されます。
+* 「sketch_日付」スケッチエディタに下敷き表示されたコードを全文削除してください。
+* 「IRrecvDumpV2」のコードを全文コピーして「sketch_日付」に貼り付け、以下の一行だけ書き換えます。
 
 ```
 const uint16_t kRecvPin = 14;
@@ -220,13 +220,11 @@ void setup() {
 
 Daikinの場合、「```uint8_t daikin_code[35]={}```」の中身を、先ほど採取した赤外線のパターンの「```uint8_t state[35] ={}```」の中身で上書きをします。35は配列の要素数ですので、数が違う場合は合わせて変更してください。
 
-なおこのサンプルコードでは、見やすいよう改行を入れていますが、改行は入れなくても動きます。
 
 ![コピー元](images/chapxx-sitopp/sito_024.png)
 
 ![コピー先](images/chapxx-sitopp/sito_025.png)
-
-
+このサンプルコードでは、見やすいよう改行を入れています。
 
 
 
@@ -256,11 +254,11 @@ https://GitHub.com/crankyoldgit/IRremoteESP8266
 
 * M5StickCでスマートフォンから操作できる家電リモコンを作る（NECの例）
 
-```https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/```
+https://elchika.com/article/218f5072-28a6-461c-a801-43390305f4cc/
 
 * M5StickC を赤外線リモコンにする（各種テレビメーカーの例）
 
-```https://kuratsuki.net/2019/07/```
+https://kuratsuki.net/2019/07/
 
 
 
@@ -587,7 +585,7 @@ Speaking as Alexa
 
 ## M5StickCリモコンをMQTT対応にする
 
-AdafruitのMQTTライブラリを使います。また、Adafruit のMQTT Library をインストールするとついてくるMQTTのサンプルコード「```mqtt_2subs_esp8266```」をアレンジして使いました。
+AdafruitのMQTTライブラリを使います。また、Adafruit のMQTT Library をインストールするとついてくるMQTTのサンプルコード「mqtt_2subs_esp8266」をアレンジして使いました。
 
 * Arduino IDEを開き、「スケッチ」→「ライブラリをインクルード」→「ライブラリを管理」→ 検索をフィルタ欄に「Adafruit_mqtt」と検索し、表示されたものをインストール。
 * 「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
@@ -634,7 +632,7 @@ URL：https://GitHub.com/sitopp/vf_techbookfest8_sampleCode
 
 IFTTTのWebhooksに付属のTestツールを使って、結合テストしてみましょう。
 
-* ChromeでIFTTTの「My Services」にアクセス ```https://ifttt.com/my_services```
+* ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
 * 「Webhooks」 → 「Documentation」
 * 「Make a POST or GET Web request to:」の下にあるURLの{event}のところに「M5StickCIRRemoCon」と入力
 * 「With an optional JSON body of:」に以下のように入力
