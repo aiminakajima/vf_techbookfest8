@@ -54,7 +54,7 @@ Before we started Voiceflow, we were Alexa Skill creators working on an Alexa sk
 私たちがVoiceflowをはじめる前は、Fableと呼ばれるAlexaスキルに取り組んでいるAlexa Skillクリエイターでした。前提は、実際の声優による一連のインタラクティブな子供向けストーリーと、読者が自分の声を使用して物語を制御できるようにする「独自のアドベンチャーを選択する」形式でした。当時、私たちは全員一緒に学校を出て、一緒にこのコンセプトに取り組みました。私たちは、音声技術が世界を変えるだろうと感じ、革命の一部になるのを待ちきれませんでした。 Fableに取り組んでいると、Alexaでプレイされるインタラクティブな子供たちの物語を何日も書き続けることになります。毎週新しいストーリーを書き、オーディオを作成し、家族がAlexaと一緒に読むために物理的なストーリーブックを印刷してから、ストーリーとデバイスを箱に入れて毎週金曜日の午後にバイクで届けます。
 //}
 
-//numberlessimage[chap00-preface/voiceflow_01][The Fable team packaging up boxes of stories to be delivered]
+//numberlessimage[chap00-preface/voiceflow_01][The Fable team packaging up boxes of stories to be delivered][scale=0.5]
 
 //embed[latex]{
 \clearpage
@@ -142,4 +142,4 @@ Voiceflowが成長するにつれて、コミュニティの製品と役割も�
 プラットフォームを毎日サポートしてくれる何千人ものVoiceflowユーザー、お客様、そしてチームメイトの努力なしにはこれは不可能です。音声プラットフォームだけでなく、あらゆるプラットフォームで、誰でも会話型インターフェースを作成できるプラットフォームを一緒に構築しましょう。 すべての初期ユーザー、お客様、パートナー、サポーターに感謝します。 一緒に成し遂げることがたくさんあります。
 //}
 
-//numberlessimage[chap00-preface/voiceflow_08][Voiceflow team, December 2019]
+//numberlessimage[chap00-preface/voiceflow_08][Voiceflow team, December 2019][scale=0.95]
