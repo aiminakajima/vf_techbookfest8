@@ -89,7 +89,8 @@ https://www.facebook.com/groups/voiceflowgroup/
 //sideimage[magistralla-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
 第2章 担当 @<strong>{渡辺泰久}@<br>{}
-福岡でVUIコミュニティ「VUI Fukuoka」をお手伝いしています、Voiceflow歴半年です。
+福岡でVUIコミュニティ「VUI Fukuoka」をお手伝いしています。@<br>{}
+Voiceflow歴は半年です。
 //}
 //blankline
 
