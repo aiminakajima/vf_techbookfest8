@@ -25,11 +25,11 @@ Before we started Voiceflow, we were Alexa Skill creators working on an Alexa sk
 
 ![The Fable team packaging up boxes of stories to be delivered](images/chap00-preface/voiceflow_01.jpg)
 
-@<icon>{images/chap00-preface/voiceflow_01.jpg}
+@<icon>{chap00-preface/voiceflow_01}
 
-//indepimage[images/chap00-preface/voiceflow_01.jpg][The Fable team packaging up boxes of stories to be delivered]
+//indepimage[chap00-preface/voiceflow_01][The Fable team packaging up boxes of stories to be delivered]
 
-//numberlessimage[images/chap00-preface/voiceflow_01.jpg][The Fable team packaging up boxes of stories to be delivered]
+//numberlessimage[chap00-preface/voiceflow_01][The Fable team packaging up boxes of stories to be delivered]
 
 Fable became a popular Alexa skill in Canada. However, Alexa often misheard the families and heard "Bible" instead of "Fable". So, we changed the name of the skill to "Storyflow" which was named after our role model of a company, Webflow. We worked incredibly hard for 5 months, without any pay, to build an amazing stories platform on Alexa. Below is a flowchart we made for one of our interactive stories that would later serve as the inspiration for Voiceflow's flowchart design system.  
 
