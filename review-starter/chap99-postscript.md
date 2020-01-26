@@ -23,7 +23,7 @@ xxx
 //blankline
 
 【企業向け】
-//sideimage[review-starter/images/chap99-postscript/Workshop-Voiceflow.jpeg]{
+//sideimage[Workshop-Voiceflow][48mm][side=L,sep=7mm,border=on]{
 //noindent
 株式会社ISAO主催「AI音声アシスタント/スマートスピーカービジネス活用セミナー&VUI体験ワークショップ」 にて、Voiceflowを使ったスキル制作体験を行いました。たった1時半ほどのグループワークで、スキルの企画から始まり、ハッピーパス作り、スキル制作、実機でのテストまで「VUIデザインスプリント」をクイックに体験いただきました。
 //}
@@ -116,7 +116,7 @@ Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキ
 //sideimage[aiminakajima-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
 第6章 担当 @<strong>{中嶋あいみ}@<br>{}
-アメリカでAmazon Echoと出会ってからVUIの世界に魅せられ、公私ともにVUIデザイナーとして活動。2020年2月に起業し、株式会社VOICE ALEを設立。VUI/UXでスマホ依存をなくし、世の中を平和にするミッションを追求しています。 
+アメリカでAmazon Echoと出会ってからVUIの世界に魅せられ、公私ともにVUIデザイナーとして活動。2020年2月に起業し、株式会社VOICE ALEを設立。VUI/UXでスマホ依存をなくし、世の中を平和にするミッションを追求しています。@<br>{}
 Women in Voice Japan ambassador
 //}
 //blankline
