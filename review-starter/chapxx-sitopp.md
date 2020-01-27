@@ -1,4 +1,4 @@
-# スマートリモコンをM5StickCで自作し、Google Homeから家電を操作
+# M5StickCでスマートリモコンを自作し、Google Homeから家電を操作
 
 ## 概要
 
@@ -264,6 +264,8 @@ https://kuratsuki.net/2019/07/
 
 ## AdafruitのMQTTの設定
 
+MQTTとは、IBMが開発したメッセージ送信の規格です。
+
 * Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成。
 * 「Actions」 → 「Create a New Dashboard」で、ダッシュボードを作成します。
 
@@ -280,10 +282,7 @@ Description: Daikin 赤外線リモコン なりすまし用
 ```
 
 * 「Feeds」 → 「View All」→ 「daikin_onoff」 → 「Feed Info」
-
-```
-「MQTT by Key」のところにMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
-```
+* 以下の画面が開きます。「MQTT by Key」のところに後でつかうMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
 
 ![](images/chapxx-sitopp/sito_027.png)
 
@@ -301,7 +300,7 @@ Username	Your Adafruit IO Username
 Password	Your Adafruit IO Key
 ```
 
-なおUsername/passwordは、```https://io.adafruit.com/```のユーザーアカウントではありません。
+なおUsername/passwordは、```https://io.adafruit.com/```のユーザーアカウントとは別物です。
 ダッシュボードの右肩にある```AIO Key```をクリックすると閲覧できます。
 
 ![AIO Keyを閲覧するにはここをクリックするべし](images/chapxx-sitopp/sito_027_2.png)
@@ -321,7 +320,7 @@ Webhooksで発行されたURLにアクセスすると、Adafruitの```MQTTブロ
 * 表示された「Adafruit」のパネルをクリック。
 * （初回利用の場合）「Connect Adafruit」という画面が表示されるので、「Connect」をクリック。ポップアップ画面で下にスクロールし、「Authorize IFTTT」の下にある「AUTHORIZE」をクリック。
 * 「```Send data to Adafruit IO```」のパネルをクリック。
-* 「Feed name」の選択肢で、先ほどAdafruitで登録したFeed「daikin_onoff」を選ぶ。
+* 「Feed name」の選択肢で、先ほどAdafruitで登録したFeed、「daikin_onoff」を選ぶ。
 * 「Data to save」の右下にある「Add ingredient」をクリックし、EventNameをクリックする。
 *  再度「Add ingredient」をクリックし、Value1、Value2、Value3もクリックする。「Data to save」は「{{EventName}} {{Value1}} {{Value2}} {{Value3}}」となる。
 * 「Create action」→「Finish」
