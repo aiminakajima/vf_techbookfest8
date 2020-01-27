@@ -370,40 +370,52 @@ canvasが開いたら、いよいよフローを作っていきます。
 ![AlexaとGoogle切り替えスイッチ](images/chapxx-sitopp/sito_030.png)
 
 * Blocksメニューの「▶︎Advanced」をクリックして開き、「Interaction」ブロックをcanvasにドラッグ。
-* Homeブロックの「Start」の右端から線を出して接続する。
-* クリックして設定画面を開き「Intents」→「```+Add Intent```」をクリック
-* 「Intent_one」の字の上をクリックして編集できる状態にし、「aircon_on」と上書き入力
-* 「Enter user reply」入力欄に「暖房つけて」と入力してエンター
-* 「Enter user reply」入力欄に「エアコンつけて」と入力してエンター
-* 「Enter user reply」入力欄に「暖房をつけて」と入力してエンター
-* この要領で```「aircon_off」Intent```も作成
+* Homeブロックの「Start」の右端から線を出してInteractionブロックの左側に接続する。
+* クリックして設定画面を開き「Intents」→「```+Add Intent```」をクリック。
+* 「Intent_one」の字の上をクリックして編集できる状態にし、「aircon_on」と上書き入力。
+* 「Enter user reply」入力欄に「暖房つけて」と入力してエンター。
+* 「Enter user reply」入力欄に「エアコンつけて」と入力してエンター。
+* 「Enter user reply」入力欄に「暖房をつけて」と入力してエンター。
+
+![Intent作成](images/chapxx-sitopp/sito_030_2.png)
+
+* この要領で```「aircon_off」Intent```も作成します。
+* 「Intent_two」の字の上をクリックして編集できる状態にし、「aircon_off」と上書き入力。
+* 「Enter user reply」入力欄に「暖房けして」と入力してエンター。
+* 「Enter user reply」入力欄に「暖房を消して」と入力してエンター。
+* 「Enter user reply」入力欄に「エアコン消して」と入力してエンター。
 
 ```
+Intentまとめ：
+
 Intent名 ： aircon_on
 user reply : 暖房つけて、エアコンつけて、暖房をつけて
 
 Intent名 ： aircon_off
 user reply : 暖房けして、暖房を消して、エアコン消して
 ```
-* 同じInteractionブロックをクリックして設定画面を開き、「Choices」をクリック 
-* 「+Add Choice」→「1」の選択肢に「aircon_on」を指定
-* 「+Add Choice」→「2」の選択肢に「aircon_off」を指定
 
-脚注：ChoicesはAlexaとGoogleで異なるため、アップロード先をAlexaにする場合はそれ用に追加して作る必要があります。お忘れなきよう。
+* 同じInteractionブロックの「Choices」タブをクリック。
+* 「+Add Choice」→「1」の選択肢に「aircon_on」を指定。
+* 「+Add Choice」→「2」の選択肢に「aircon_off」を指定。
 
-* 一番左の細いペインの上から3番目のアイコン「Variables」をクリック
-* Create Variable（Project）の入力欄に「device」と入力してエンター
-* するとそのすぐ下のVariablesのリストの末尾に「{device}」が追加される
-* 同様に{onoff}も追加
+入力が終わったらCanvasの空白部分をクリックしましょう。Intentの横ペインがスッと閉じると同時に、自動保存されます。
+
+
+* canvas画面の一番左の超細いペインの上から3番目のアイコン「Variables」をクリック。
+* Create Variable（Project）の入力欄に「device」と入力してエンター。
+* するとそのすぐ下のVariablesのリストの末尾に「{device}」が追加される。
+* 同様に{onoff}も追加。
 
 ```
-Variablesに追加するパラメタ：
+Variablesに追加するパラメタまとめ：
+
 {device}
 {onoff}
 ```
 
-* 一番左の細いペインの一番上のアイコン「Blocks」をクリック。
-* 「▶︎Logic」→「Set」ブロックをCanvasにドラッグ、Interactionの右側「１」から線を出して接続する。
+* canvas画面の一番左の超細いペインの一番上のアイコン「Blocks」をクリック。
+* 「▶︎Logic」→「Set」ブロックをCanvasにドラッグ、Interactionの右側「１」から線を出してSetの左側に接続する。
 * setブロックをクリックし、設定画面を開いたら、以下のように指定。2個目を追加するときには「Add Variable Set」をクリックすると入力欄が追加される。
 
 ```
