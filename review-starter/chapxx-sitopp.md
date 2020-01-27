@@ -311,6 +311,7 @@ Password	Your Adafruit IO Key
 Webhooksで発行されたURLにアクセスすると、Adafruitの```MQTTブローカー```にTopicをパブリッシュするというしくみを作ります。
 
 * IFTTT（イフト）にログインします。 ```https://ifttt.com/```
+* アカウントがまだの人は作成しましょう。
 * 右上の人型アイコンをクリック → プルダウンメニューの中から「Create」 をクリック。
 * 「Create your own」画面で「This」をクリック。
 * 「Search services」という入力欄に「Webhooks」と入力 → 表示された「Webhooks」のパネルをクリック。
@@ -322,26 +323,29 @@ Webhooksで発行されたURLにアクセスすると、Adafruitの```MQTTブロ
 * 「```Send data to Adafruit IO```」のパネルをクリック。
 * 「Feed name」の選択肢で、先ほどAdafruitで登録したFeed、「daikin_onoff」を選ぶ。
 * 「Data to save」の右下にある「Add ingredient」をクリックし、EventNameをクリックする。
-*  再度「Add ingredient」をクリックし、Value1、Value2、Value3もクリックする。「Data to save」は「{{EventName}} {{Value1}} {{Value2}} {{Value3}}」となる。
-* 「Create action」→「Finish」
+*  再度「Add ingredient」をクリックし、Value1、Value2、Value3もクリックする。
+* 「Data to save」は「```{{EventName}} {{Value1}} {{Value2}} {{Value3}}```」となる。
+* 「Create action」→「Finish」をクリック。
 
-完成後、右上の「settings」をクリックするとIFTTTレシピの詳細が見れます。
+これでアプレットは完成です。右上の「settings」をクリックすると詳細が見れます。
 
-![IFTTTのレシピ詳細](images/chapxx-sitopp/sito_026.png)
+![IFTTTのアプレット詳細](images/chapxx-sitopp/sito_026.png)
 
-#### WebhooksのURLを調べる
+### WebhooksのURLを調べる
 
 * ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
-* 「Webhooks」 → 「Documentation」
-* 「Make a POST or GET Web request to」の下にあるURLの{event}の所に「M5StickCIRRemoCon」と入力する。```https://```から始まるURLをコピーしてメモ帳などに控えておく。
+* 「Webhooks」 → 「Documentation」を開く。
+* 「Make a POST or GET Web request to」の下にあるURLの{event}の所に「M5StickCIRRemoCon」と入力。
+* ```https://```から始まるURLをコピーしてメモ帳に控えておく。
 * 「With an optional JSON body of:」の下にあるJsonをコピーして、メモ帳などに控えておく。
 
+![WebhooksのURL](images/chapxx-sitopp/sito_028.png)
+
 ```
+メモ帳に保存しておくもの
 URL：https://maker.ifttt.com/trigger/M5StickCIRRemoCon/with/key/(略)
 JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 ```
-
-![WebhooksのURL](images/chapxx-sitopp/sito_028.png)
 
 
 ## VoiceflowでActions On Googleを作成
@@ -349,21 +353,25 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 ### 暖房をつけるフローの作成
 
 * Chromeでvoiceflowにアクセスし、ログインします。https://www.voiceflow.com/
-* create Project」クリック → 「Enter your Project name」に、Actions名を入力する。
+* アカウントがまだの人は作成しましょう。
+* 「create Project」クリック → 「Enter your Project name」に、Actions名を入力。
 
-例）Actions名を「しょういんじ」にした場合、Google Homeに「OK Google しょういんじを呼んで」と話しかければ起動できます。
+```
+例）Actions名は起動する時の名前になります。「しょういんじ」にした場合、Google Homeに「OK Google しょういんじを呼んで」と話しかければ起動できます。
+```
 
-* Select Regions画面で「Japanese」にチェックを入れ、「English（US）」のチェックを外す→「create Project」をクリック
+* Select Regions画面で「Japanese」にチェックを入れ、「English（US）」のチェックを外す。
+* 「create Project」をクリックするとcanvasが開く。
 
-canvasが開いたら、淡々と作っていきます。
+canvasが開いたら、いよいよフローを作っていきます。
 
-* ヘッダ部分の「Alexa Google」の切り替えスイッチを、Googleの方にする。すると「Upload to Alexa」のボタンが「Upload to Google」に変化する。
+* ヘッダ部分の「Alexa Google」の切り替えスイッチを「Google」の方にスライド。すると「Upload to Alexa」のボタンが「Upload to Google」に変化する。
 
 ![AlexaとGoogle切り替えスイッチ](images/chapxx-sitopp/sito_030.png)
 
 * Blocksメニューの「▶︎Advanced」をクリックして開き、「Interaction」ブロックをcanvasにドラッグ。
 * Homeブロックの「Start」の右端から線を出して接続する。
-* クリックして設定画面を開き「```Intents```」→「```+Add Intent```」をクリック
+* クリックして設定画面を開き「Intents」→「```+Add Intent```」をクリック
 * 「Intent_one」の字の上をクリックして編集できる状態にし、「aircon_on」と上書き入力
 * 「Enter user reply」入力欄に「暖房つけて」と入力してエンター
 * 「Enter user reply」入力欄に「エアコンつけて」と入力してエンター
@@ -453,7 +461,7 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 * ```「Congratulations! You're fired the M5StickCIRRemoCon event"」```と表示されればOK。もしエラーなら、POSTのURLが間違っているので見直す。
 
 * IFTTT側の発行履歴も確認してみる。（```https://ifttt.com/my_applets ```）
-* 作成したレシピ「```If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed```」をクリック
+* 作成したアプレット「```If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed```」をクリック
 * 「Settings」をクリック
 * 「View activity」ボタンをクリックすると履歴一覧が開く。
 
