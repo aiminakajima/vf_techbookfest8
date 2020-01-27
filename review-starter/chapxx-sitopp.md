@@ -249,8 +249,8 @@ Daikinの場合、「uint8_t daikin_code[35]={}」の中身を、先ほど採取
 
 https://GitHub.com/crankyoldgit/IRremoteESP8266
 
-しかし、これだけでは良くわからないので、
-とても参考になる有益な**神ブログ**をいくつか紹介します。
+
+しかし、これだけでは良くわからないので、とても参考になる有益な**神ブログ**をいくつか紹介します。
 
 * M5StickCでスマートフォンから操作できる家電リモコンを作る（NECの例）
 
@@ -264,7 +264,7 @@ https://kuratsuki.net/2019/07/
 
 ## AdafruitのMQTTの設定
 
-* Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成します。
+* Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成。
 * 「Actions」 → 「Create a New Dashboard」で、ダッシュボードを作成します。
 
 ```
@@ -273,11 +273,17 @@ Description：開発用
 ```
 
 * 「Feeds」 → 「View All」 → 「Actions」 → 「Create a new feed」でFeedsを作成します。
-* * Name：daikin_onoff
-* * Description: Daikin 赤外線リモコン なりすまし用
+
+```
+Name：daikin_onoff
+Description: Daikin 赤外線リモコン なりすまし用
+```
 
 * 「Feeds」 → 「View All」→ 「daikin_onoff」 → 「Feed Info」
-* * 「MQTT by Key」のところにMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
+
+```
+「MQTT by Key」のところにMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
+```
 
 ![](images/chapxx-sitopp/sito_027.png)
 
@@ -306,15 +312,15 @@ Password	Your Adafruit IO Key
 Webhooksで発行されたURLにアクセスすると、Adafruitの```MQTTブローカー```にTopicをパブリッシュするというしくみを作ります。
 
 * IFTTT（イフト）にログインします。 ```https://ifttt.com/```
-* 右上の人型アイコンをクリック → プルダウンメニューが表示されたら、「Create」 をクリック。
+* 右上の人型アイコンをクリック → プルダウンメニューの中から「Create」 をクリック。
 * 「Create your own」画面で「This」をクリック。
 * 「Search services」という入力欄に「Webhooks」と入力 → 表示された「Webhooks」のパネルをクリック。
 * 初回利用の人は、「Connect Webhooks」という画面が表示されるので、Connectをクリック。
 * 「Receive a Web request」のパネルをクリック→ Event Name:「```M5StickCIRRemoCon```」と入力。
-* 「Create trigger」→ 「That」をクリック →「Search services」という入力欄に「Adafruit」と入力。
+* 「Create trigger」→ 「That」 →「Search services」に「Adafruit」と入力。
 * 表示された「Adafruit」のパネルをクリック。
-* （初回利用の場合）「Connect Adafruit」という画面が表示されるので、Connectをクリック。ポップアップ画面で下にスクロールし、「Authorize IFTTT」の下にある「AUTHORIZE」をクリック。
-* ```Send data to Adafruit IO```のパネルをクリック。
+* （初回利用の場合）「Connect Adafruit」という画面が表示されるので、「Connect」をクリック。ポップアップ画面で下にスクロールし、「Authorize IFTTT」の下にある「AUTHORIZE」をクリック。
+* 「```Send data to Adafruit IO```」のパネルをクリック。
 * 「Feed name」の選択肢で、先ほどAdafruitで登録したFeed「daikin_onoff」を選ぶ。
 * 「Data to save」の右下にある「Add ingredient」をクリックし、EventNameをクリックする。
 *  再度「Add ingredient」をクリックし、Value1、Value2、Value3もクリックする。「Data to save」は「{{EventName}} {{Value1}} {{Value2}} {{Value3}}」となる。
