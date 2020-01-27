@@ -267,8 +267,11 @@ https://kuratsuki.net/2019/07/
 
 * Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成します。
 * 「Actions」 → 「Create a New Dashboard」で、ダッシュボードを作成します。
-* * Name：voiceflowIRDev
-* * Description：開発用
+
+```
+Name：voiceflowIRDev
+Description：開発用
+```
 
 * 「Feeds」 → 「View All」 → 「Actions」 → 「Create a new feed」でFeedsを作成します。
 * * Name：daikin_onoff
