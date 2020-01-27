@@ -105,6 +105,7 @@ Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキ
 //sideimage[sitopp-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
 第4章 担当 @<strong>{伊藤清香}@<br>{}
+仕事はBLEビーコンを使った位置情報プラットフォームの開発運営。3年前のGDCでAmazon Echoをタダでもらったのがきっかけでスキル制作をはじめた。欧州サッカーのアーセナルのファン。最近白菜の漬け方の極意をマスターしました。
 //}
 //blankline
 
