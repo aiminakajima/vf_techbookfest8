@@ -89,7 +89,8 @@ https://www.facebook.com/groups/voiceflowgroup/
 //sideimage[magistralla-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
 第2章 担当 @<strong>{渡辺泰久}@<br>{}
-福岡でVUIコミュニティ「VUI Fukuoka」をお手伝いしています、Voiceflow歴半年です。
+福岡でVUIコミュニティ「VUI Fukuoka」をお手伝いしています。@<br>{}
+Voiceflow歴は半年です。
 //}
 //blankline
 
@@ -110,6 +111,7 @@ Voiceflow Global Ambassador / Voiceflow Growth Award 2019 / AWS認定Alexaスキ
 //sideimage[vui-rie-icon][24mm][side=L,sep=7mm,border=on]{
 //noindent
 第5章 担当 @<strong>{元木理恵}@<br>{}
+「Voice UIが死ねば己も死ぬ」というストロングスタイルのVoice UI/UXデザイナー。企画・会話設計・画面設計・営業など開発以外は何でもやってます。「Voice UIが当たり前」という世界にするため、他業界にもネットワークをはりめぐらせ、縦横無尽に奔走しています。
 //}
 //blankline
 
