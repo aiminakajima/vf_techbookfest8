@@ -18,7 +18,7 @@
 #### やること
 
 * M5StickCで赤外線リモコン作成 
-* AdafruitのMQTTブローカの設定 
+* Adafruitの```MQTTブローカー```の設定 
 * IFTTTでMQTTの簡易パブリッシャーを作る 
 * VoiceflowでActions On Googleを作成 
 * M5StickCリモコンをMQTT対応にする
@@ -263,7 +263,7 @@ https://kuratsuki.net/2019/07/
 
 
 
-## AdafruitのMQTTブローカの設定
+## AdafruitのMQTTの設定
 
 * Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成します。
 * 「Actions」 → 「Create a New Dashboard」で、ダッシュボードを作成します。
@@ -283,7 +283,7 @@ Description：開発用
 ![](images/chapxx-sitopp/sito_027.png)
 
 
-* MQTTブローカのサーバ情報を調べておきます。
+* ```MQTTブローカー```のサーバ情報を調べておきます。
 
 https://io.adafruit.com/api/docs/mqtt.html#mqtt-connection-details
 
@@ -304,7 +304,7 @@ Password	Your Adafruit IO Key
 
 ## IFTTTでMQTTの簡易パブリッシャーを作る
 
-Webhooksで発行されたURLにアクセスすると、AdafruitのMQTTブローカにTopicをパブリッシュするというしくみを作ります。
+Webhooksで発行されたURLにアクセスすると、Adafruitの```MQTTブローカー```にTopicをパブリッシュするというしくみを作ります。
 
 * IFTTT（イフト）にログインします。 ```https://ifttt.com/```
 * 右上の人型アイコンをクリック → プルダウンメニューが表示されたら、「Create」 をクリック。
