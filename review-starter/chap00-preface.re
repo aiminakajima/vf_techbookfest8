@@ -1,51 +1,22 @@
 = まえがき
 
-//centering{
-＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ @<strong>{注意} ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
-//}
-
-このドキュメントは、Re:VIEWのサンプル原稿を兼ねています。
-自分の原稿を書くときは、サンプルの原稿ファイルと画像ファイルを消してください。
-
-本文での、1行あたりの文字数の確認：@<br>{}
-一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
-
-
-//centering{
-＊＊＊＊＊＊＊＊＊＊＊ 以下、まえがきのサンプル ＊＊＊＊＊＊＊＊＊＊＊@<br>{}
-//}
-
-
 本書を手に取っていただき、ありがとうございます。
 
-本書は、XXXについてわかりやすく解説した本です。この本を読めば、XXXの基礎的な使い方が身につきます。
-===== 本書で得られること
-
- * XXXについての基礎的な使い方
+本書は、ノンコーディングで音声アプリケーションを作成できるサービス「Voiceflow」についてわかりやすく解説した本です。@<br>{}
+AIやクラウドコンピューティングの進化により、音声アプリケーションは飛躍的に使いやすくなり身近なモノになりつつあります。また、今後は音声UIを備えるモノが増え、ますます音声UXの担う役割は重要になるでしょう。@<br>{}
+この本には、Voiceflowの使い方だけにとどまらず、音声アプリケーションの作成手法や勘所など、VUI/VUX界における著名な方々のエッセンスが詰まっており、まさに虎の巻といえるものになっています。@<br>{}
+エンジニアの方に読んでいただくのももちろん光栄ですが、コーディングをしない全ての職業・職種の方、小中学生を含めた学生の方に読んでいただき、音声UIの世界に一歩踏み入れて頂くきっかけになれば幸いです。
 
 
 ===== 対象読者
 
- * XXXについて興味がある人
- * XXXの入門書を読んだ人（まったくの初心者は対象外です）
+ * 音声UIについて興味がある人（老若男女、あらゆる職業・職種を問いません）
+ * Voiceflowについて興味がある人
 
-
-===== 前提知識
-
- * Linuxについての基礎知識
- * 何らかのプログラミング言語の基礎知識
-
-
-===== 問い合わせ先
-
- * URL: https://www.example.com/
- * Mail: support@example.com
- * Twitter: @example
 
 //embed[latex]{
 \clearpage
 //}
-
 
 === Voiceflowチームより寄稿
 Before we started Voiceflow, we were Alexa Skill creators working on an Alexa skill called Fable. The premise was a series of interactive children's stories with real voice actors, and a "choose your own adventure" format that would give the reader the ability to use their voice and control the narrative. At that time, we had all left school to work on the concept together. We felt voice technology was going to change the world and couldn't wait to be a part of the revolution. Working on Fable, we would stay up for days straight writing interactive children stories that would be played on Alexa. Every week we would write a new story, create the audio, print physical storybooks for the families to read alongside Alexa, then box-up the stories and devices and deliver them on our bikes every Friday afternoon.  
