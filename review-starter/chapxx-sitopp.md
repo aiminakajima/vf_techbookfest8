@@ -361,18 +361,18 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 ```
 
 * Select Regions画面で「Japanese」にチェックを入れ、「English（US）」のチェックを外す。
-* 「create Project」をクリックするとcanvasが開く。
+* 「create Project」をクリックするとCanvasが開く。
 
-canvasが開いたら、いよいよフローを作っていきます。
+Canvasが開いたら、いよいよフローを作っていきます。
 
 * ヘッダ部分の「Alexa Google」の切り替えスイッチを「Google」の方にスライド。すると「Upload to Alexa」のボタンが「Upload to Google」に変化する。
 
 ![AlexaとGoogle切り替えスイッチ](images/chapxx-sitopp/sito_030.png)
 
-* Blocksメニューの「▶︎Advanced」をクリックして開き、「Interaction」ブロックをcanvasにドラッグ。
+* Blocksメニューの「▶︎Advanced」をクリックして開き、「Interaction」ブロックをCanvasにドラッグ。
 * Homeブロックの「Start」の右端から線を出してInteractionブロックの左側に接続する。
 * クリックして設定画面を開き「Intents」→「```+Add Intent```」をクリック。
-* 「Intent_one」の字の上をクリックして編集できる状態にし、「aircon_on」と上書き入力。
+* 「Intent_one」の字の上をクリックして編集できる状態にし、「```aircon_on```」と上書き入力。
 * 「Enter user reply」入力欄に「暖房つけて」と入力してエンター。
 * 「Enter user reply」入力欄に「エアコンつけて」と入力してエンター。
 * 「Enter user reply」入力欄に「暖房をつけて」と入力してエンター。
@@ -380,7 +380,7 @@ canvasが開いたら、いよいよフローを作っていきます。
 ![Intent作成](images/chapxx-sitopp/sito_030_2.png)
 
 * この要領で```「aircon_off」Intent```も作成します。
-* 「Intent_two」の字の上をクリックして編集できる状態にし、「aircon_off」と上書き入力。
+* 「Intent_two」の字の上をクリックして編集できる状態にし、「```aircon_off```」と上書き入力。
 * 「Enter user reply」入力欄に「暖房けして」と入力してエンター。
 * 「Enter user reply」入力欄に「暖房を消して」と入力してエンター。
 * 「Enter user reply」入力欄に「エアコン消して」と入力してエンター。
@@ -396,16 +396,16 @@ user reply : 暖房けして、暖房を消して、エアコン消して
 ```
 
 * 同じInteractionブロックの「Choices」タブをクリック。
-* 「+Add Choice」→「1」の選択肢に「aircon_on」を指定。
-* 「+Add Choice」→「2」の選択肢に「aircon_off」を指定。
+* 「+Add Choice」→「1」の選択肢に「```aircon_on```」を指定。
+* 「+Add Choice」→「2」の選択肢に「```aircon_off```」を指定。
 
 入力が終わったらCanvasの空白部分をクリックしましょう。Intentの横ペインがスッと閉じると同時に、自動保存されます。
 
 
-* canvas画面の一番左の超細いペインの上から3番目のアイコン「Variables」をクリック。
-* Create Variable（Project）の入力欄に「device」と入力してエンター。
-* するとそのすぐ下のVariablesのリストの末尾に「{device}」が追加される。
-* 同様に{onoff}も追加。
+* Canvas画面の一番左の超細いペインの上から3番目のアイコン「Variables」をクリック。
+* 「Create Variable（Project）」の入力欄に「device」と入力してエンター。
+* するとそのすぐ下のVariablesのリストの末尾に「```{device}```」が追加される。
+* 同様に```{onoff}```も追加。
 
 ```
 Variablesに追加するパラメタまとめ：
@@ -414,7 +414,7 @@ Variablesに追加するパラメタまとめ：
 {onoff}
 ```
 
-* canvas画面の一番左の超細いペインの一番上のアイコン「Blocks」をクリック。
+* Canvas画面の一番左の超細いペインの一番上のアイコン「Blocks」をクリック。
 * 「▶︎Logic」→「Set」ブロックをCanvasにドラッグ、Interactionの右側「１」から線を出してSetの左側に接続する。
 * setブロックをクリックし、設定画面を開いたら、以下のように指定。2個目を追加するときには「Add Variable Set」をクリックすると入力欄が追加される。
 
@@ -422,6 +422,7 @@ Variablesに追加するパラメタまとめ：
 set {device} to: 「aircon」
 set {onoff} to: 「on」
 ```
+![Set作成](images/chapxx-sitopp/sito_030_3.png)
 
 * 「▶︎Basic」→「Speak」ブロックをCanvasにドラッグ、Setの右側から線を出して接続する
 * Speakブロックをクリックし、設定画面を開いたら、以下のように指定。
@@ -539,7 +540,7 @@ Jsonが発行されたら、voiceflowに戻り、「Drop Json File here or Brows
 
 アップする前に言語設定を確認します。
 
-* VoiceflowのCanvasを開いている状態で、画面左上の「canvas Test Publish」の3つのうち「Publish」をクリック
+* VoiceflowのCanvasを開いている状態で、画面左上の「Canvas Test Publish」の3つのうち「Publish」をクリック
 * 「Google beta」をクリック→Languagesパネルで、「Japanese(ja）」→「Next」
 * 「Canvas」に戻り「Upload to Google」のボタンをクリック
 * インジケータが回り、10数秒ほどでアップロード完了して、「Action Upload Successfull」と表示される
