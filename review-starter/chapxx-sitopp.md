@@ -1,4 +1,4 @@
-# スマートリモコンをM5StickCで自作し、Google Homeから家電を操作
+# M5StickCでスマートリモコンを自作し、Google Homeから家電を操作
 
 ## 概要
 
@@ -18,7 +18,7 @@
 #### やること
 
 * M5StickCで赤外線リモコン作成 
-* AdafruitのMQTTブローカの設定 
+* AdafruitのMQTTの設定 
 * IFTTTでMQTTの簡易パブリッシャーを作る 
 * VoiceflowでActions On Googleを作成 
 * M5StickCリモコンをMQTT対応にする
@@ -31,7 +31,7 @@
 * MacBook Air（macOS Mojave）
 * Arduino IDE 1.8.9
 * Chrome 最新版
-* メモ帳（お好みのエディタ、なんでも。自分はいつものVSCodeを使いました。）
+* メモ帳（お好みのエディタ。自分は普段使っているVSCodeを使いました。）
 
 自分はMacを使いましたが、Windowsにも共通のツールがあります。適宜読み替えて進めてください。
 
@@ -73,7 +73,7 @@ Arduino IDEをインストールします。すでに使っている人はスキ
 ### Arduino IDEにM5StickCの開発用リソースを取り込む
 
 * Arduino IDEを起動します。
-* 「sketch_〜」というエディタが開きますが、今は使いません。
+* 「sketch_日付」というエディタが開きますが、今は使いません。
 * 「Arduino」＞「Preferences..」をクリックすると「環境設定」画面の「ネットワーク」が開きます。
 * 「```追加のボードマネージャのURL```」入力欄の右にある窓のアイコンをクリックします。
 * 以下のように2行入力してOKをクリックします。
@@ -182,7 +182,7 @@ Hard resetting via RTS pin...
 赤外線リモコンの命令パターンはメーカー間で統一されておらず、フォーマットが違います。
 この本ではDaikinのエアコンのやり方について説明します。@<fn>{sitopp_maker}
 
-//footnote[sitopp_maker][Daikin以外のメーカーについては、ググるといろいろ親切に解説してくださっているページがありますので、「Daikin以外のメーカーの場合」の項目を参照ください。]
+//footnote[sitopp_maker][Daikin以外のメーカーについては、ググるといろいろ親切に解説してくださっているページがありましたので、「Daikin以外のメーカーの場合」の項でご紹介しました。ご覧ください。]
 
 
 * Arduino IDEの「ツール」→「ライブラリをインクルード」→「ライブラリを管理」→「IRsend」と入力し、表示されたライブラリをインストールします。
@@ -211,7 +211,6 @@ void setup() {
 （以下略）
 ``` 
 
-
 * IRsendDemo_DAIKIN.inoの全文を、お使いのエディタに貼り付けてください。自分のおすすめはVSCodeですが、なんでも良いです。
 * エディタ上で、赤外線の命令パターンを書き換えます。
 
@@ -230,7 +229,7 @@ Daikinの場合、「uint8_t daikin_code[35]={}」の中身を、先ほど採取
 * Arduino IDEの「ファイル」→「新規ファイル」でスケッチエディタを開きます。下敷き表示されたコードは削除してください。
 * 赤外線の命令パターンを書き換えたIRsendDemo_DAIKIN.inoを、スケッチエディタに貼り付けてください。
 * スケッチエディタの左上にある「→」アイコンをクリックして、M5StickCに書き込みします。
-* ファイルの保存場所を聞かれるので、適当に指定します。
+* Mac上のファイルの保存場所を聞かれるので、適当に指定します。特に変更せずその場所に保存するので良いでしょう。
 * 書き込みにかかる時間、数十秒を待ちます。
 * スケッチエディタの下半分にインストールログがどどっと出力され、「Hard resetting via RTS pin...」メッセージが出たらインストール完了です。
 * USBケーブルを抜いて、M5StickCをエアコンの50cn以内に持っていきます。赤外線送受信ユニットは抜かずにさしたままです。
@@ -240,7 +239,7 @@ Daikinの場合、「uint8_t daikin_code[35]={}」の中身を、先ほど採取
 
 ### トラブルシュート
 
-赤外線は目では見えません。スマートフォンのフロントカメラで赤外線送受信ユニットの出力部分を写すとわかります。以下はiPhone Xで撮ったの写真です。このように写真は撮影しなくても、カメラに写すだけで、弱く紫っぽい色がかすかに光る様子が見えます。
+赤外線は目では見えません。スマートフォンのフロントカメラで赤外線送受信ユニットの出力部分を写すとわかります。以下はiPhone Xで撮った写真です。このように写真は撮影しなくても、カメラに写すだけで、弱く紫っぽい色がかすかに光る様子が見えます。
 
 ![スマートフォンのフロントカメラだと赤外線が映る](images/chapxx-sitopp/sito_023_2.png)
 
@@ -250,8 +249,8 @@ Daikinの場合、「uint8_t daikin_code[35]={}」の中身を、先ほど採取
 
 https://GitHub.com/crankyoldgit/IRremoteESP8266
 
-しかし、これだけでは良くわからないので、
-とても参考になる有益な**神ブログ**をいくつか紹介します。
+
+しかし、これだけでは良くわからないので、とても参考になる有益な**神ブログ**をいくつか紹介します。
 
 * M5StickCでスマートフォンから操作できる家電リモコンを作る（NECの例）
 
@@ -263,24 +262,32 @@ https://kuratsuki.net/2019/07/
 
 
 
-## AdafruitのMQTTブローカの設定
+## AdafruitのMQTTの設定
 
-* Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成します。
+MQTTとは、IBMが開発したメッセージ送信の規格です。
+
+* Adafruit（エイダフルート）https://io.adafruit.com/ にアクセスし、アカウントを作成。
 * 「Actions」 → 「Create a New Dashboard」で、ダッシュボードを作成します。
-* * Name：voiceflowIRDev
-* * Description：開発用
+
+```
+Name：voiceflowIRDev
+Description：開発用
+```
 
 * 「Feeds」 → 「View All」 → 「Actions」 → 「Create a new feed」でFeedsを作成します。
-* * Name：daikin_onoff
-* * Description: Daikin 赤外線リモコン なりすまし用
+
+```
+Name：daikin_onoff
+Description: Daikin 赤外線リモコン なりすまし用
+```
 
 * 「Feeds」 → 「View All」→ 「daikin_onoff」 → 「Feed Info」
-* * 「MQTT by Key」のところにMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
+* 以下の画面が開きます。「MQTT by Key」のところに後でつかうMQTTのTopicが自動生成されていますので、メモ帳にコピーしておきます。
 
 ![](images/chapxx-sitopp/sito_027.png)
 
 
-* MQTTブローカのサーバ情報を調べておきます。
+* ```MQTTブローカー```のサーバ情報を調べておきます。
 
 https://io.adafruit.com/api/docs/mqtt.html#mqtt-connection-details
 
@@ -293,7 +300,7 @@ Username	Your Adafruit IO Username
 Password	Your Adafruit IO Key
 ```
 
-なおUsername/passwordは、```https://io.adafruit.com/```のユーザーアカウントではありません。
+なおUsername/passwordは、```https://io.adafruit.com/```のユーザーアカウントとは別物です。
 ダッシュボードの右肩にある```AIO Key```をクリックすると閲覧できます。
 
 ![AIO Keyを閲覧するにはここをクリックするべし](images/chapxx-sitopp/sito_027_2.png)
@@ -301,40 +308,44 @@ Password	Your Adafruit IO Key
 
 ## IFTTTでMQTTの簡易パブリッシャーを作る
 
-Webhooksで発行されたURLにアクセスすると、AdafruitのMQTTブローカにTopicをパブリッシュするというしくみを作ります。
+Webhooksで発行されたURLにアクセスすると、Adafruitの```MQTTブローカー```にTopicをパブリッシュするというしくみを作ります。
 
 * IFTTT（イフト）にログインします。 ```https://ifttt.com/```
-* 右上の人型アイコンをクリック → プルダウンメニューが表示されたら、「Create」 をクリック。
+* アカウントがまだの人は作成しましょう。
+* 右上の人型アイコンをクリック → プルダウンメニューの中から「Create」 をクリック。
 * 「Create your own」画面で「This」をクリック。
 * 「Search services」という入力欄に「Webhooks」と入力 → 表示された「Webhooks」のパネルをクリック。
 * 初回利用の人は、「Connect Webhooks」という画面が表示されるので、Connectをクリック。
 * 「Receive a Web request」のパネルをクリック→ Event Name:「```M5StickCIRRemoCon```」と入力。
-* 「Create trigger」→ 「That」をクリック →「Search services」という入力欄に「Adafruit」と入力。
+* 「Create trigger」→ 「That」 →「Search services」に「Adafruit」と入力。
 * 表示された「Adafruit」のパネルをクリック。
-* （初回利用の場合）「Connect Adafruit」という画面が表示されるので、Connectをクリック。ポップアップ画面で下にスクロールし、「Authorize IFTTT」の下にある「AUTHORIZE」をクリック。
-* ```Send data to Adafruit IO```のパネルをクリック。
-* 「Feed name」の選択肢で、先ほどAdafruitで登録したFeed「daikin_onoff」を選ぶ。
+* （初回利用の場合）「Connect Adafruit」という画面が表示されるので、「Connect」をクリック。ポップアップ画面で下にスクロールし、「Authorize IFTTT」の下にある「AUTHORIZE」をクリック。
+* 「```Send data to Adafruit IO```」のパネルをクリック。
+* 「Feed name」の選択肢で、先ほどAdafruitで登録したFeed、「daikin_onoff」を選ぶ。
 * 「Data to save」の右下にある「Add ingredient」をクリックし、EventNameをクリックする。
-*  再度「Add ingredient」をクリックし、Value1、Value2、Value3もクリックする。「Data to save」は「{{EventName}} {{Value1}} {{Value2}} {{Value3}}」となる。
-* 「Create action」→「Finish」
+*  再度「Add ingredient」をクリックし、Value1、Value2、Value3もクリックする。
+* 「Data to save」は「```{{EventName}} {{Value1}} {{Value2}} {{Value3}}```」となる。
+* 「Create action」→「Finish」をクリック。
 
-完成後、右上の「settings」をクリックするとIFTTTレシピの詳細が見れます。
+これでアプレットは完成です。右上の「settings」をクリックすると詳細が見れます。
 
-![IFTTTのレシピ詳細](images/chapxx-sitopp/sito_026.png)
+![IFTTTのアプレット詳細](images/chapxx-sitopp/sito_026.png)
 
-#### WebhooksのURLを調べる
+### WebhooksのURLを調べる
 
 * ChromeでIFTTTの「My Services」にアクセス https://ifttt.com/my_services 
-* 「Webhooks」 → 「Documentation」
-* 「Make a POST or GET Web request to」の下にあるURLの{event}の所に「M5StickCIRRemoCon」と入力する。```https://```から始まるURLをコピーしてメモ帳などに控えておく。
+* 「Webhooks」 → 「Documentation」を開く。
+* 「Make a POST or GET Web request to」の下にあるURLの{event}の所に「M5StickCIRRemoCon」と入力。
+* ```https://```から始まるURLをコピーしてメモ帳に控えておく。
 * 「With an optional JSON body of:」の下にあるJsonをコピーして、メモ帳などに控えておく。
 
+![WebhooksのURL](images/chapxx-sitopp/sito_028.png)
+
 ```
+メモ帳に保存しておくもの
 URL：https://maker.ifttt.com/trigger/M5StickCIRRemoCon/with/key/(略)
 JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 ```
-
-![WebhooksのURL](images/chapxx-sitopp/sito_028.png)
 
 
 ## VoiceflowでActions On Googleを作成
@@ -342,59 +353,76 @@ JSON：{ "value1" : "", "value2" : "", "value3" : "" }
 ### 暖房をつけるフローの作成
 
 * Chromeでvoiceflowにアクセスし、ログインします。https://www.voiceflow.com/
-* create Project」クリック → 「Enter your Project name」に、Actions名を入力する。
+* アカウントがまだの人は作成しましょう。
+* 「create Project」クリック → 「Enter your Project name」に、Actions名を入力。
 
-例）Actions名を「しょういんじ」にした場合、Google Homeに「OK Google しょういんじを呼んで」と話しかければ起動できます。
+```
+例）Actions名は起動する時の名前になります。「しょういんじ」にした場合、Google Homeに「OK Google しょういんじを呼んで」と話しかければ起動できます。
+```
 
-* Select Regions画面で「Japanese」にチェックを入れ、「English（US）」のチェックを外す→「create Project」をクリック
+* Select Regions画面で「Japanese」にチェックを入れ、「English（US）」のチェックを外す。
+* 「create Project」をクリックするとCanvasが開く。
 
-canvasが開いたら、淡々と作っていきます。
+Canvasが開いたら、いよいよフローを作っていきます。
 
-* ヘッダ部分の「Alexa Google」の切り替えスイッチを、Googleの方にする。すると「Upload to Alexa」のボタンが「Upload to Google」に変化する。
+* ヘッダ部分の「Alexa Google」の切り替えスイッチを「Google」の方にスライド。すると「Upload to Alexa」のボタンが「Upload to Google」に変化する。
 
 ![AlexaとGoogle切り替えスイッチ](images/chapxx-sitopp/sito_030.png)
 
-* Blocksメニューの「▶︎Advanced」をクリックして開き、「Interaction」ブロックをcanvasにドラッグ。
-* Homeブロックの「Start」の右端から線を出して接続する。
-* クリックして設定画面を開き「```Intents```」→「```+Add Intent```」をクリック
-* 「Intent_one」の字の上をクリックして編集できる状態にし、「aircon_on」と上書き入力
-* 「Enter user reply」入力欄に「暖房つけて」と入力してエンター
-* 「Enter user reply」入力欄に「エアコンつけて」と入力してエンター
-* 「Enter user reply」入力欄に「暖房をつけて」と入力してエンター
-* この要領で```「aircon_off」Intent```も作成
+* Blocksメニューの「▶︎Advanced」をクリックして開き、「Interaction」ブロックをCanvasにドラッグ。
+* Homeブロックの「Start」の右端から線を出してInteractionブロックの左側に接続する。
+* クリックして設定画面を開き「Intents」→「```+Add Intent```」をクリック。
+* 「Intent_one」の字の上をクリックして編集できる状態にし、「```aircon_on```」と上書き入力。
+* 「Enter user reply」入力欄に「暖房つけて」と入力してエンター。
+* 「Enter user reply」入力欄に「エアコンつけて」と入力してエンター。
+* 「Enter user reply」入力欄に「暖房をつけて」と入力してエンター。
+
+![Intent作成](images/chapxx-sitopp/sito_030_2.png)
+
+* この要領で```「aircon_off」Intent```も作成します。
+* 「Intent_two」の字の上をクリックして編集できる状態にし、「```aircon_off```」と上書き入力。
+* 「Enter user reply」入力欄に「暖房けして」と入力してエンター。
+* 「Enter user reply」入力欄に「暖房を消して」と入力してエンター。
+* 「Enter user reply」入力欄に「エアコン消して」と入力してエンター。
 
 ```
+Intentまとめ：
+
 Intent名 ： aircon_on
 user reply : 暖房つけて、エアコンつけて、暖房をつけて
 
 Intent名 ： aircon_off
 user reply : 暖房けして、暖房を消して、エアコン消して
 ```
-* 同じInteractionブロックをクリックして設定画面を開き、「Choices」をクリック 
-* 「+Add Choice」→「1」の選択肢に「aircon_on」を指定
-* 「+Add Choice」→「2」の選択肢に「aircon_off」を指定
 
-脚注：ChoicesはAlexaとGoogleで異なるため、アップロード先をAlexaにする場合はそれ用に追加して作る必要があります。お忘れなきよう。
+* 同じInteractionブロックの「Choices」タブをクリック。
+* 「+Add Choice」→「1」の選択肢に「```aircon_on```」を指定。
+* 「+Add Choice」→「2」の選択肢に「```aircon_off```」を指定。
 
-* 一番左の細いペインの上から3番目のアイコン「Variables」をクリック
-* Create Variable（Project）の入力欄に「device」と入力してエンター
-* するとそのすぐ下のVariablesのリストの末尾に「{device}」が追加される
-* 同様に{onoff}も追加
+入力が終わったらCanvasの空白部分をクリックしましょう。Intentの横ペインがスッと閉じると同時に、自動保存されます。
+
+
+* Canvas画面の一番左の超細いペインの上から3番目のアイコン「Variables」をクリック。
+* 「Create Variable（Project）」の入力欄に「device」と入力してエンター。
+* するとそのすぐ下のVariablesのリストの末尾に「```{device}```」が追加される。
+* 同様に```{onoff}```も追加。
 
 ```
-Variablesに追加するパラメタ：
+Variablesに追加するパラメタまとめ：
+
 {device}
 {onoff}
 ```
 
-* 一番左の細いペインの一番上のアイコン「Blocks」をクリック。
-* 「▶︎Logic」→「Set」ブロックをCanvasにドラッグ、Interactionの右側「１」から線を出して接続する。
+* Canvas画面の一番左の超細いペインの一番上のアイコン「Blocks」をクリック。
+* 「▶︎Logic」→「Set」ブロックをCanvasにドラッグ、Interactionの右側「１」から線を出してSetの左側に接続する。
 * setブロックをクリックし、設定画面を開いたら、以下のように指定。2個目を追加するときには「Add Variable Set」をクリックすると入力欄が追加される。
 
 ```
 set {device} to: 「aircon」
 set {onoff} to: 「on」
 ```
+![Set作成](images/chapxx-sitopp/sito_030_3.png)
 
 * 「▶︎Basic」→「Speak」ブロックをCanvasにドラッグ、Setの右側から線を出して接続する
 * Speakブロックをクリックし、設定画面を開いたら、以下のように指定。
@@ -446,7 +474,7 @@ VALUE t7d=ClVt （任意の文字列を入力してください。）
 * ```「Congratulations! You're fired the M5StickCIRRemoCon event"」```と表示されればOK。もしエラーなら、POSTのURLが間違っているので見直す。
 
 * IFTTT側の発行履歴も確認してみる。（```https://ifttt.com/my_applets ```）
-* 作成したレシピ「```If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed```」をクリック
+* 作成したアプレット「```If Maker Event "M5StickCIRRemoCon", then Send data to onoff feed```」をクリック
 * 「Settings」をクリック
 * 「View activity」ボタンをクリックすると履歴一覧が開く。
 
@@ -512,7 +540,7 @@ Jsonが発行されたら、voiceflowに戻り、「Drop Json File here or Brows
 
 アップする前に言語設定を確認します。
 
-* VoiceflowのCanvasを開いている状態で、画面左上の「canvas Test Publish」の3つのうち「Publish」をクリック
+* VoiceflowのCanvasを開いている状態で、画面左上の「Canvas Test Publish」の3つのうち「Publish」をクリック
 * 「Google beta」をクリック→Languagesパネルで、「Japanese(ja）」→「Next」
 * 「Canvas」に戻り「Upload to Google」のボタンをクリック
 * インジケータが回り、10数秒ほどでアップロード完了して、「Action Upload Successfull」と表示される
