@@ -1,13 +1,13 @@
 # Voiceflowでプロトタイピングを始めよう
 
 VUIデザイナーの中嶋あいみです。
-こちらの章では、Voiceflowの効果的活用方法として「VUIプロトタイピング」を推奨したいと思います。
+こちらの章では、Voiceflowの効果的な活用方法として「VUIプロトタイピング」を推奨したいと思います。
 
 ## プロトタイプ・プロトタイピングとは
 
-プロトタイプとは簡単に言うと「試作品」のことで、コンピューターの世界では広く使われるワードです。
+プロトタイプとは簡単に言うと「試作品」のことで、コンピュータの世界では広く使われる言葉です。
 デザインの文脈では「サービスデザイン」「デザインスプリント」「コンセプト検証」などの手段として使われ、有形・無形問わずプロダクトを実開発に着手する前に制作することがあります。
-アプリ開発ではSketchやAdobe XDなどのツールでUIデザインとインタラクションを作り、紙芝居のような形で実機で動くサンプルを作る手法です。
+アプリケーション開発ではSketchやAdobe XDなどのツールでUIデザインとインタラクションを作り、紙芝居のような形で実機で動くサンプルを作る手法です。
 
 ここでは、プロトタイプとは「実機と話せる試作品」という定義にします。
 VUIでの実機とは、Amazon EchoやGoogle Homeのスマートスピーカーや、音声アシスタント搭載デバイスのことを指します。
@@ -16,11 +16,11 @@ VUIでの実機とは、Amazon EchoやGoogle Homeのスマートスピーカー�
 
 ## プロトタイプはどんな人・シーンで使えるか
 
-この本を手に取っていただいた方は、「よし！さっそくVoiceflowを使ってスキルを作ってみよう！」とテンションが上がっているところだと思います。
+この本を手に取っていただいた方は、「よし！さっそくVoiceflowを使ってスキルを作ってみよう」とテンションが上がっているところだと思います。
 
 その勢いは大事ですし、とにかく手軽に始められることがVoiceflowのメリットであることは確かです。
 
-もしくは、「とにかくスキルを爆速で作りたいから、この章は無視しておこう」と思っている方もいるかもしれません。
+もしくは、「とにかくスキルを爆速で作りたいから、本章は無視しておこう」と思っている方もいるかもしれません。
 
 あなたにもプロトタイプは関係あることなのか？
 答えは「イエス」です。
@@ -28,7 +28,7 @@ VUIでの実機とは、Amazon EchoやGoogle Homeのスマートスピーカー�
 利用シーンから考えてみましょう。
 まずスキルを開発しようとしている人を3つに分類してみます。
 
-1. スマートスピーカーが大好きなので、自分でも何か作ってみたいとふんわり考えている人
+1. スマートスピーカーが大好きで、自分でも何か作ってみたいとふんわり考えている人
 2. こんなスキルがあったらいいな、という明確なアイデアがある人
 3. 自社もしくはクライアント向けに仕事でスキルを作っている or これから作ろうとしている人
 
@@ -43,10 +43,10 @@ VUIでの実機とは、Amazon EchoやGoogle Homeのスマートスピーカー�
 少しVUIデザインの手法に触れます。「◯◯ができるスキル」というアイデアが決まったら「ハッピーパス」を作成しましょう。
 ハッピーパスとは「そのスキルの目的を達成させるための最もスムーズな対話フロー」のことです。
 
-VUIは1つのフローではなく当然分岐することがありますが、一旦それは置いておいて、まずは成功例を考えます。
+VUIは1つのフローではなく当然分岐することがありますが、いったんそれは置いておいて、まずは成功例を考えます。
 私が公開しているAlexaスキル「乾杯の音頭」を例に、ハッピーパスを見てみましょう。
 
-[review-starter/images/chapxx-aiminakajima/Voiceflow-happypath.jpeg]
+![](review-starter/images/chapxx-aiminakajima/Voiceflow-happypath.jpeg)
 
 実線がハッピーパス、点線がハッピーパスではないフローです。まずスキルのコア機能を試すには、ハッピーパスだけ作ればスタートとしては事足りています。
 
@@ -56,28 +56,28 @@ VUIは1つのフローではなく当然分岐することがありますが、�
 
 1.画面右上のShareアイコンをクリックします。
 
-[review-starter/images/chapxx-aiminakajima/Browser-Test-1.png]
+![](review-starter/images/chapxx-aiminakajima/Browser-Test-1.png)
 
 2.共有用URLが表示されますので、右の「Copy link」をクリックします。
 
-[review-starter/images/chapxx-aiminakajima/Browser-Test-2.png]
+![](review-starter/images/chapxx-aiminakajima/Browser-Test-2.png)
 
 3.URLを共有された人には、この画面が表示されます。「Start Test」をクリックします。
 
-[review-starter/images/chapxx-aiminakajima/Browser-Test-3.png]
+![](review-starter/images/chapxx-aiminakajima/Browser-Test-3.png)
 
 4.テキストフォームにユーザーが発話するテキストを入力するか、もしくはPCのマイクボタンを長押しすることで自分の声でもテストできます。
 せっかくなので声でテストしてみると良いでしょう。
 
-[review-starter/images/chapxx-aiminakajima/Browser-Test-4.png]
+![](review-starter/images/chapxx-aiminakajima/Browser-Test-4.png)
 
 ブラウザ上でも他人に使ってもらうと、何かしらのフィードバックをもらえると思います。将来的にフィードバックコメントが入力できたりすることを期待したいですね。そこからVUIの改善をしたら、Amazon Developer ConsoleやActions on Googleで、βテストを送りましょう。いよいよ実機でテストしてもらうことができます。
 
 ▼Alexa Developer Consoleのβテスト招待画面
-[review-starter/images/chapxx-aiminakajima/test-alexa.png]
+![](review-starter/images/chapxx-aiminakajima/test-alexa.png)
 
 ▼Actions on Googleのα・βテスト招待画面
-[review-starter/images/chapxx-aiminakajima/test-google.png]
+![](review-starter/images/chapxx-aiminakajima/test-google.png)
 
 ## AlexaとGoogle Assistantの使い分け
 
@@ -87,4 +87,4 @@ AlexaとGoogleアシスタントは、同じ日本語でも間合いやイント
 
 ## まとめ
 
-より多くの人に長く愛されるスキルを作るためには、他人からのフィードバックはとても大事です。スキルを公開してから辛辣なレビューを書かれてショックを受ける前に、まずはプロトタイプで検証することを推奨します。お友達や知人からフィードバックをもらったうえで、世の中にお披露目したほうが安心です。Voiceflowを使ったプロトタイピングはMVP（実用最小限の製品： minimum viable product）を作って試せる手軽な手段です。ぜひ試してみてください！
+より多くの人に長く愛されるスキルを作るためには、他人からのフィードバックはとても大事です。スキルを公開してから辛辣なレビューを書かれてショックを受ける前に、まずはプロトタイプで検証することを推奨します。お友達や知人からフィードバックをもらったうえで、世の中にお披露目したほうが安心です。Voiceflowを使ったプロトタイピングはMVP（実用最小限の製品： minimum viable product）を作って試せる手軽な手段です。ぜひ試してみてください。
